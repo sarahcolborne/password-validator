@@ -10,4 +10,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    public static boolean validate(String pass){
+        if (pass.length() < 8){
+            return false;
+        }
+
+        if (pass.toLowerCase().equals("password")){
+            return false;
+        }
+
+        return true;
+    }
+
 }
