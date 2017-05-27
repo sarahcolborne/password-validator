@@ -20,6 +20,24 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
 
+        //My Custom 3 Rules:
+
+        //Password must contain a number
+        //note, I got help for this from stackoverflow: https://stackoverflow.com/questions/18590901/check-if-a-string-contains-numbers-java
+        if (!(pass.matches(".*[0-9]+.*"))){
+            return false;
+        }
+
+        //Password must contain a ! or $
+        if (!(pass.contains("!")) && (!(pass.contains("$")))){
+            return false;
+        }
+
+        //Password must contain an uppercase letter
+        if (pass.equals(pass.toLowerCase())){
+            return false;
+        }
+
         return true;
     }
 
